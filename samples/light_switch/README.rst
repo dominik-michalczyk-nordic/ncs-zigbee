@@ -207,6 +207,20 @@ User interface
 
 .. tabs::
 
+   .. group-tab:: nRF54LM20 Dongle
+
+      Blue LED 1:
+          Lit and solid when the device is connected to a Zigbee network.
+
+      Red LED 2:
+          Lit and solid when the light switch has found a light bulb to control.
+
+      Button 1:
+          Press for less than three seconds to toggle the connected light bulb on or off.
+          Press for three seconds to start Identify mode.
+          Press for five seconds to initiate the `factory reset of the device <Resetting to factory defaults_>`_.
+          The factory reset time can be edited using the ``CONFIG_FACTORY_RESET_PRESS_TIME_SECONDS`` Kconfig option from :ref:`lib_zigbee_application_utilities`.
+
    .. group-tab:: nRF54 DKs
 
       LED 2:
@@ -265,6 +279,12 @@ FOTA behavior assignments
 
 .. tabs::
 
+   .. group-tab:: nRF54LM20 Dongle
+
+      Green LED 1:
+         Indicates the OTA activity.
+         Used only if the FOTA support is enabled.
+
    .. group-tab:: nRF54 DKs
 
       LED 1:
@@ -297,6 +317,12 @@ Multiprotocol Bluetooth LE extension assignments
 ================================================
 
 .. tabs::
+
+   .. group-tab:: nRF54LM20 Dongle
+
+      Red LED 1:
+          Lit and solid when a Bluetooth LE Central is connected to the NUS service.
+          Available when using `Nordic UART Service (NUS)`_ in the multiprotocol configuration.
 
    .. group-tab:: nRF54 DKs
 
@@ -339,6 +365,27 @@ Testing
 After programming the sample to your development kits, complete the following steps to test it:
 
 .. tabs::
+
+   .. group-tab:: nRF54LM20 Dongle
+
+      1. Turn on the development kit that runs the Network coordinator sample.
+
+         When the network status LED turns on, this development kit has become the Coordinator of the Zigbee network.
+
+      #. Turn on the development kit that runs the Light bulb sample.
+
+         When the network status LED turns on, the light bulb has become a Router inside the network.
+
+         .. note::
+              If the network status LED does not turn on, use the Network coordinator controls to reopen the network.
+
+      #. Connect the nRF54LM20 Dongle that runs the Light switch sample.
+
+         When **Blue LED 1** turns on, the light switch has become an End Device, connected directly to the Coordinator.
+
+      #. Wait until **Red LED 2** on the light switch node turns on.
+
+         This LED indicates that the light switch found a light bulb to control.
 
    .. group-tab:: nRF54 DKs
 
