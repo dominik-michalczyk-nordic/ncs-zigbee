@@ -14,7 +14,7 @@ You can use this sample with the :ref:`Zigbee Network coordinator <zigbee_networ
 Requirements
 ************
 
-The sample supports the following development kit:
+The sample supports the following hardware platforms:
 
 .. include:: /includes/device_table_single_multi.txt
 
@@ -99,7 +99,7 @@ User interface
       Button 1:
           Depending on how long the button is pressed:
 
-          * If pressed for three seconds, it starts or cancels the Identify mode.
+          * If pressed for less than five seconds, it starts or cancels the Identify mode.
           * If pressed for five seconds, it initiates the `factory reset of the device <Resetting to factory defaults_>`_.
             The length of the button press can be edited using the ``CONFIG_FACTORY_RESET_PRESS_TIME_SECONDS`` Kconfig option from :ref:`lib_zigbee_application_utilities`.
             Releasing the button within this time does not trigger the factory reset procedure.
@@ -159,7 +159,7 @@ Building and running
 Testing
 =======
 
-After programming the sample to your development kits, complete the following steps to test it:
+After programming the samples to your devices, complete the following steps to test them:
 
 .. tabs::
 

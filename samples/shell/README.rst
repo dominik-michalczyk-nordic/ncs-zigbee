@@ -93,6 +93,7 @@ User interface
 
       Button 3:
           Starts or cancels the Identify mode.
+
    .. group-tab:: nRF52 and nRF53 DKs
 
       LED 3:
@@ -103,6 +104,7 @@ User interface
 
       Button 4:
           Starts or cancels the Identify mode.
+
    .. group-tab:: nRF52840 Dongle
 
       LED 1:

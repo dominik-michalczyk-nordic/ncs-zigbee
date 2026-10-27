@@ -48,6 +48,11 @@ Port to ZBOSS 5.0.4.1 (``zboss_features``) with platform 7.x glue, updated prebu
 Z5 API migration (BDB channel lists, ``zb_cb_param_t`` callbacks, removed ``zb_callback2_t``),
 and export fixes retaining ZLL/Touchlink headers.
 
+* Added:
+
+  * Support for the nRF54LM20 Dongle in the :ref:`zigbee_light_bulb_sample`, :ref:`zigbee_light_switch_sample`, and :ref:`zigbee_shell_sample` samples.
+    The Shell sample supports the nRF USB CDC ACM backend.
+
 * Updated:
 
   * Improved ZBOSS NVRAM storage by batching flash writes into fewer operations.

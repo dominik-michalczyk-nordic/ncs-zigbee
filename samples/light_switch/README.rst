@@ -44,7 +44,7 @@ The Light switch sample demonstrates the Zigbee End Device role and implements t
 
 Once the light switch is successfully commissioned, it sends a broadcast message to find devices with the implemented Level Control and On/Off clusters.
 The light switch remembers the device network address from the first response.
-At this point, you can start using the buttons on the development kit to control the clusters on the newly found devices.
+At this point, you can start using the buttons on the device to control the clusters on the newly found devices.
 
 Additionally, the light switch sample powers down unused RAM sections to lower power consumption in the sleep state.
 
@@ -279,12 +279,6 @@ FOTA behavior assignments
 
 .. tabs::
 
-   .. group-tab:: nRF54LM20 Dongle
-
-      Green LED 1:
-         Indicates the OTA activity.
-         Used only if the FOTA support is enabled.
-
    .. group-tab:: nRF54 DKs
 
       LED 1:
@@ -362,7 +356,7 @@ Building and running
 Testing
 =======
 
-After programming the sample to your development kits, complete the following steps to test it:
+After programming the samples to your devices, complete the following steps to test them:
 
 .. tabs::
 
@@ -377,7 +371,7 @@ After programming the sample to your development kits, complete the following st
          When the network status LED turns on, the light bulb has become a Router inside the network.
 
          .. note::
-              If the network status LED does not turn on, use the Network coordinator controls to reopen the network.
+            If the network status LED does not turn on, use the Network coordinator controls to reopen the network.
 
       #. Connect the nRF54LM20 Dongle that runs the Light switch sample.
 
@@ -429,7 +423,7 @@ After programming the sample to your development kits, complete the following st
 
          This LED indicates that the light switch found a light bulb to control.
 
-You can now use buttons on the development kit to control the light bulb, as described in :ref:`zigbee_light_switch_user_interface`.
+You can now use buttons on the light switch device to control the light bulb, as described in :ref:`zigbee_light_switch_user_interface`.
 
 .. _zigbee_light_switch_testing_touchlink:
 
@@ -488,13 +482,18 @@ Set up nRF Toolbox by completing the following steps:
 
 
    .. tabs::
+
+      .. group-tab:: nRF54LM20 Dongle
+
+         Observe that **Red LED 1** on the light switch node is solid.
+
       .. group-tab:: nRF54 DKs
-	  
+
          Observe that **LED 0** on the light switch node is solid.
 
       .. group-tab:: nRF52 and nRF53 DKs
-	  
-         Observe that **LED 1** on the light switch node is solid.   
+
+         Observe that **LED 1** on the light switch node is solid.
 
    This indicates that the Bluetooth LE connection is established.
 
@@ -504,7 +503,7 @@ In nRF Toolbox, tap the buttons you assigned to perform the test:
 #. Tap the :guilabel:`t` command button two times to toggle the LED on the Zigbee Light bulb node on and off.
 #. Tap the :guilabel:`i` and :guilabel:`d` command buttons to make adjustments to the brightness level.
 
-You can now control the devices either with the buttons on the development kits or with the NUS UART command buttons in the nRF Toolbox application.
+You can now control the devices either with the buttons on the light switch devices or with the NUS UART command buttons in the nRF Toolbox application.
 
 .. _zigbee_light_switch_testing_zigbee_bt_dfu:
 
