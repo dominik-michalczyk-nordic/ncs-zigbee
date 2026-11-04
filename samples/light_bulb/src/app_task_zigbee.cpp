@@ -242,6 +242,8 @@ static void start_identifying(zb_cb_param_t param)
 
 /**@brief Callback wrapper for button events. */
 static void button_changed(uint32_t button_state, uint32_t has_changed) {
+  LOG_DBG("Button state: 0x%x, changed: 0x%x", button_state, has_changed);
+
   if (IDENTIFY_MODE_BUTTON & has_changed) {
     if (IDENTIFY_MODE_BUTTON & button_state) {
       /* Button changed its state to pressed */
@@ -374,6 +376,8 @@ static void toggle_identify_led(zb_cb_param_t param)
 static void identify_cb(zb_cb_param_t param)
 {
   zb_ret_t zb_err_code;
+
+  LOG_DBG("Identify LED: %s", param ? "on" : "off");
 
   if (param) {
     /* Schedule a self-scheduling function that will toggle the LED. */
@@ -574,6 +578,9 @@ void zboss_signal_handler(zb_cb_param_t param) {
 
   /* Update network status LED. */
   zigbee_led_status_update(param, ZIGBEE_NETWORK_STATE_LED);
+
+  bool joined = ZB_JOINED();
+  LOG_DBG("Network LED: %s", joined ? "on" : "off");
 
 #if defined(CONFIG_ZIGBEE_TOUCHLINK_TARGET)
   zigbee_touchlink_target_signal_handler(param);
